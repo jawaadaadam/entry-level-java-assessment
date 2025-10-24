@@ -5,13 +5,13 @@ import com.challenge.api.service.EmployeeService;
 import java.util.List;
 import java.util.UUID;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 /**
@@ -54,16 +54,15 @@ public class EmployeeController {
 
     /**
      * @implNote Uses mock model data, no real persistence.
-     * @param requestBody New employee data 
+     * @param requestBody New employee data
      * @return Newly created Employee
      */
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Employee createEmployee(@RequestBody Employee requestBody) {
-        try{
+        try {
             return employeeService.createEmployee(requestBody);
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid employee data", e);
         }
     }

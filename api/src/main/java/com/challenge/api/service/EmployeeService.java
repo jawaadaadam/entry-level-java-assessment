@@ -22,7 +22,7 @@ public interface EmployeeService {
     Employee getEmployeeByUuid(UUID uuid);
     /**
      * Creates a new employee
-     * @param employee newly created object of class Employee 
+     * @param employee newly created object of class Employee
      * @return Newly created Employee
      */
     Employee createEmployee(Employee e);

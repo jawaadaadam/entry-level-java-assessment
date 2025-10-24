@@ -22,16 +22,16 @@ public class EmployeeImplementation implements Employee {
     /**
      * Class constructor to be used by REST API
      */
-    public EmployeeImplementation () {}
+    public EmployeeImplementation() {}
 
     /**
-     * Class constructor to generate default data 
+     * Class constructor to generate default data
      * @param uuid required non-null
      * @param fname first name
      * @param lname last name
-     * @param jobTitle job title 
+     * @param jobTitle job title
      */
-    public EmployeeImplementation (UUID uuid, String fname, String lname, String jobTitle) {
+    public EmployeeImplementation(UUID uuid, String fname, String lname, String jobTitle) {
 
         this.uuid = uuid;
         this.firstName = fname;
@@ -54,14 +54,12 @@ public class EmployeeImplementation implements Employee {
      */
     @Override
     public void setUuid(UUID uuid) {
-        if (uuid == null)
-            throw new IllegalArgumentException("Uuid must not be null.");
-        else
-            this.uuid = uuid;
+        if (uuid == null) throw new IllegalArgumentException("Uuid must not be null.");
+        else this.uuid = uuid;
     }
 
     /**
-     * Get object first name 
+     * Get object first name
      */
     @Override
     public String getFirstName() {
@@ -70,7 +68,7 @@ public class EmployeeImplementation implements Employee {
 
     /**
      * Set by either the Service or Data layer.
-     * @param name first name 
+     * @param name first name
      */
     @Override
     public void setFirstName(String name) {
@@ -95,7 +93,7 @@ public class EmployeeImplementation implements Employee {
     }
 
     /**
-     * Get object full name 
+     * Get object full name
      */
     @Override
     public String getFullName() {
@@ -104,11 +102,11 @@ public class EmployeeImplementation implements Employee {
 
     /**
      * Set by either the Service or Data layer.
-     * @param name full name 
+     * @param name full name
      */
     @Override
     public void setFullName(String name) {
-        if(name == null || name.isBlank()){
+        if (name == null || name.isBlank()) {
             this.firstName = "";
             this.lastName = "";
             return;
@@ -131,8 +129,8 @@ public class EmployeeImplementation implements Employee {
      * @param salary salary
      */
     @Override
-    public void setSalary(Integer salary){
-        this.salary = salary; 
+    public void setSalary(Integer salary) {
+        this.salary = salary;
     }
 
     /**
@@ -162,7 +160,7 @@ public class EmployeeImplementation implements Employee {
 
     /**
      * Set by either the Service or Data layer.
-     * @param jobTitle job title 
+     * @param jobTitle job title
      */
     @Override
     public void setJobTitle(String jobTitle) {
